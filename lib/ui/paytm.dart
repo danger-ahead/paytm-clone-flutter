@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_paytm_ui/model/Gridmodel.dart';
 import 'package:flutter_paytm_ui/model/ImageSliderModel.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
+import '../others/common.dart';
 
 class Paytm extends StatefulWidget {
   @override
@@ -21,7 +22,7 @@ class _PaytmState extends State<Paytm> {
         appBar: _appBar(),
         body: _bodyItem(),
         backgroundColor: Colors.grey[200],
-        bottomNavigationBar: _bottemTab());
+        bottomNavigationBar: _bottomTab());
   }
 
   Widget _appBar() {
@@ -65,49 +66,29 @@ class _PaytmState extends State<Paytm> {
     );
   }
 
-  Widget _bottemTab() {
+  Widget _bottomTab() {
     return new BottomNavigationBar(
         currentIndex: 0,
         type: BottomNavigationBarType.fixed,
         items: [
           new BottomNavigationBarItem(
-            icon: Image.asset(
-              "assets/home.png",
-              width: 24.0,
-              height: 24.0,
-            ),
+            icon: imgBtmNavBar("assets/home.png"),
             label: 'Home',
           ),
           new BottomNavigationBarItem(
-            icon: Image.asset(
-              "assets/shopping-bagg.png",
-              width: 24.0,
-              height: 24.0,
-            ),
+            icon: imgBtmNavBar("assets/shopping-bagg.png"),
             label: 'Mall',
           ),
           new BottomNavigationBarItem(
-            icon: Image.asset(
-              "assets/qr-code.png",
-              width: 24.0,
-              height: 24.0,
-            ),
+            icon: imgBtmNavBar("assets/qr-code.png"),
             label: 'Scan',
           ),
           new BottomNavigationBarItem(
-            icon: Image.asset(
-              "assets/bank.png",
-              width: 24.0,
-              height: 24.0,
-            ),
+            icon: imgBtmNavBar("assets/bank.png"),
             label: 'Bank',
           ),
           new BottomNavigationBarItem(
-            icon: Image.asset(
-              "assets/delivery.png",
-              width: 24.0,
-              height: 24.0,
-            ),
+            icon: imgBtmNavBar("assets/delivery.png"),
             label: 'Inbox',
           ),
         ]);
@@ -227,7 +208,7 @@ class _PaytmState extends State<Paytm> {
   }
 
   List<GridModel> _getGridItemList() {
-    List<GridModel> list = new List<GridModel>();
+    List<GridModel> list = [];
     list.add(new GridModel("assets/smartphone.png", "Mobile\nprepaid", null));
     list.add(new GridModel("assets/airplane.png", "Flights", null));
     list.add(new GridModel("assets/access.png", "Movie Tickets", null));
@@ -248,7 +229,7 @@ class _PaytmState extends State<Paytm> {
   }
 
   List<GridModel> _getGridList() {
-    List<GridModel> list = new List<GridModel>();
+    List<GridModel> list = [];
     list.add(new GridModel("assets/send_money.png", "Pay", Colors.white));
     list.add(new GridModel("assets/money_transfer.png", "UPI", Colors.white));
     list.add(new GridModel(
@@ -266,7 +247,7 @@ class _PaytmState extends State<Paytm> {
   }
 
   List<ImageSliderModel> _getImageSliderList() {
-    List<ImageSliderModel> list = new List();
+    List<ImageSliderModel> list = [];
 
     list.add(new ImageSliderModel("assets/real.jpg"));
     list.add(new ImageSliderModel("assets/real.jpg"));
@@ -335,7 +316,7 @@ class _PaytmState extends State<Paytm> {
 }
 
 class GridItem extends StatelessWidget {
-  GridModel gridModel;
+  final GridModel gridModel;
 
   GridItem(this.gridModel);
 
@@ -373,7 +354,7 @@ class GridItem extends StatelessWidget {
 }
 
 class GridItemTop extends StatelessWidget {
-  GridModel gridModel;
+  final GridModel gridModel;
 
   GridItemTop(this.gridModel);
 
