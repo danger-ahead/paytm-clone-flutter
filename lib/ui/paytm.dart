@@ -1,10 +1,7 @@
-import 'dart:math';
-
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_paytm_ui/model/Gridmodel.dart';
 import 'package:flutter_paytm_ui/model/ImageSliderModel.dart';
-import 'package:flutter_swiper/flutter_swiper.dart';
 import '../others/common.dart';
 
 class Paytm extends StatefulWidget {
@@ -331,11 +328,14 @@ class GridItem extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              Image.asset(
-                gridModel.imagePath,
-                width: 30,
-                height: 30,
-                color: gridModel.color,
+              IconButton(
+                onPressed: () {print('shit');},
+                icon: Image.asset(
+                  gridModel.imagePath,
+                  width: 30,
+                  height: 30,
+                  color: gridModel.color,
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 5),
