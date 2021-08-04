@@ -10,8 +10,8 @@ dependencies:
   flutter:
     sdk: flutter
 
-  cupertino_icons: ^0.1.2
-  carousel_slider: any
+  cupertino_icons: ^1.0.3
+  carousel_slider: ^4.0.0
   flutter_swiper : ^1.1.6
 
 dev_dependencies:
