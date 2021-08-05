@@ -4,8 +4,8 @@ import 'package:flutter_paytm_ui/model/Gridmodel.dart';
 import 'package:flutter_paytm_ui/model/ImageSliderModel.dart';
 
 class Home extends StatelessWidget {
-  int _currentIndexUp = 0;
-  BuildContext context;
+  static int _currentIndexUp = 0, _currentIndex = 0;
+  final BuildContext context;
 
   Home(this.context);
 
@@ -26,8 +26,13 @@ class Home extends StatelessWidget {
                     initialPage: 0,
                     enlargeCenterPage: true,
                     autoPlay: false,
+                    onPageChanged: (index, reason) {
+                      _currentIndexUp = index;
+                      (context as Element)
+                          .markNeedsBuild(); //Can't use setState()
+                    },
                   ),
-                  items: List<GridView>.generate((2), (int index) {
+                  items: List<GridView>.generate((4), (int index) {
                     return GridView.count(
                       crossAxisCount: 4,
                       children: List<GridItemTop>.generate((4), (int index) {
@@ -105,12 +110,10 @@ class Home extends StatelessWidget {
                   pauseAutoPlayOnTouch: true,
                   enlargeCenterPage: true,
                   autoPlay: true,
-                  // onPageChanged: (index) {
-                  //   setState(() {
-                  //     _currentIndex = index;
-                  //     print(_currentIndex);
-                  //   });
-                  // },
+                  onPageChanged: (index, reason) {
+                    _currentIndex = index;
+                    (context as Element).markNeedsBuild();
+                  },
                 ),
                 items: CarouselSliderList(_getImageSliderList()),
               ),

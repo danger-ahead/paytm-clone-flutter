@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 
-Widget imgBtmNavBar(String path){
+Widget imgBtmNavBar(String path) {
   return Image.asset(
-      path,
-      width: 24.0,
-      height: 24.0,
+    path,
+    width: 24.0,
+    height: 24.0,
   );
 }

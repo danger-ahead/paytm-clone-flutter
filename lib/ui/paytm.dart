@@ -1,8 +1,9 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_paytm_ui/model/Gridmodel.dart';
-import 'package:flutter_paytm_ui/model/ImageSliderModel.dart';
+import 'package:flutter_paytm_ui/nav_bar_tabs/bank.dart';
 import 'package:flutter_paytm_ui/nav_bar_tabs/home.dart';
+import 'package:flutter_paytm_ui/nav_bar_tabs/inbox.dart';
+import 'package:flutter_paytm_ui/nav_bar_tabs/mall.dart';
+import 'package:flutter_paytm_ui/nav_bar_tabs/qr.dart';
 import '../others/common.dart';
 
 class Paytm extends StatefulWidget {
@@ -17,10 +18,13 @@ class _PaytmState extends State<Paytm> {
   Widget build(BuildContext context) {
     final List<Widget> _btmNavBar = [
       Home(context),
+      Mall(),
+      Qr(),
+      Bank(),
+      Inbox(),
     ];
     return Scaffold(
         appBar: _appBar(),
-        // body: _bodyItem(),
         body: _btmNavBar[_currentIndexBtmNavBar],
         backgroundColor: Colors.grey[200],
         bottomNavigationBar: _bottomTab());
@@ -68,14 +72,16 @@ class _PaytmState extends State<Paytm> {
   }
 
   void onTabTapped(int index) {
-   setState(() {
-     _currentIndexBtmNavBar = index;
-   });
- }
+    setState(() {
+      _currentIndexBtmNavBar = index;
+    });
+  }
 
   Widget _bottomTab() {
     return new BottomNavigationBar(
-      onTap: onTabTapped,
+        unselectedItemColor: Colors.grey,
+        selectedItemColor: Colors.blue[800],
+        onTap: onTabTapped,
         currentIndex: 0,
         type: BottomNavigationBarType.fixed,
         items: [
