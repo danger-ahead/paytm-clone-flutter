@@ -27,7 +27,7 @@ class Home extends StatelessWidget {
                     enlargeCenterPage: true,
                     autoPlay: false,
                     onPageChanged: (index, reason) {
-                      _currentIndexUp = index;
+                      _currentIndexUp = index == 2 || index == 3 ? 0 : index;
                       (context as Element)
                           .markNeedsBuild(); //Can't use setState()
                     },
@@ -36,8 +36,8 @@ class Home extends StatelessWidget {
                     return GridView.count(
                       crossAxisCount: 4,
                       children: List<GridItemTop>.generate((4), (int index) {
-                        return GridItemTop(
-                            _getGridList()[index + (_currentIndexUp * 4)]);
+                          return GridItemTop(
+                              _getGridList()[index + (_currentIndexUp * 4)]);
                       }),
                     );
                   }),
@@ -78,10 +78,8 @@ class Home extends StatelessWidget {
                 children: <Widget>[
                   Icon(Icons.highlight),
                   Text('Get Rs.1000 Cashback on Auto/Taxi rides !'),
-                  Image.asset(
-                    "assets/right-arrow.png",
-                    height: 13,
-                    width: 13,
+                  Icon(
+                    Icons.arrow_right,
                     color: Colors.black,
                   ),
                 ],
@@ -126,39 +124,40 @@ class Home extends StatelessWidget {
 
   List<GridModel> _getGridItemList() {
     List<GridModel> list = [];
-    list.add(new GridModel("assets/smartphone.png", "Mobile\nprepaid", null));
-    list.add(new GridModel("assets/airplane.png", "Flights", null));
-    list.add(new GridModel("assets/access.png", "Movie Tickets", null));
-    list.add(new GridModel("assets/hand.png", "Events", null));
+    list.add(
+        new GridModel(Icon(Icons.mobile_friendly), "Mobile\nprepaid", null));
+    list.add(
+        new GridModel(Icon(Icons.airplane_ticket_outlined), "Flights", null));
     list.add(new GridModel(
-        "assets/phone-charge.png", "Mobile        Postpaid", null));
-    list.add(new GridModel("assets/console.png", "Games", null));
-    list.add(new GridModel("assets/gold.png", "Gold", null));
-    list.add(new GridModel("assets/iocl_tip.png", "Electricity", null));
-    list.add(new GridModel("assets/train_help.png", "Train Tickets", null));
+        Icon(Icons.movie_creation_outlined), "Movie Tickets", null));
+    list.add(new GridModel(Icon(Icons.music_note_outlined), "Events", null));
     list.add(
-      new GridModel("assets/shopping-bag.png", "Shopping", null),
+        new GridModel(Icon(Icons.mobile_friendly), "Mobile\nPostpaid", null));
+    list.add(new GridModel(Icon(Icons.gamepad_outlined), "Games", null));
+    list.add(new GridModel(Icon(Icons.attach_money), "Gold", null));
+    list.add(new GridModel(
+        Icon(Icons.electrical_services_outlined), "Electricity", null));
+    list.add(new GridModel(Icon(Icons.train_outlined), "Train Tickets", null));
+    list.add(
+      new GridModel(Icon(Icons.shopping_basket_outlined), "Shopping", null),
     );
-    list.add(new GridModel("assets/satellite-dish.png", "DTH", null));
-    list.add(
-        new GridModel("assets/placeholder_inapp_merchants.png", "More", null));
+    list.add(new GridModel(Icon(Icons.satellite_outlined), "DTH", null));
+    list.add(new GridModel(Icon(Icons.menu), "More", null));
     return list;
   }
 
   List<GridModel> _getGridList() {
     List<GridModel> list = [];
-    list.add(new GridModel("assets/send_money.png", "Pay", Colors.white));
-    list.add(new GridModel("assets/money_transfer.png", "UPI", Colors.white));
+    list.add(new GridModel(Icon(Icons.send_outlined), "Pay", Colors.white));
     list.add(new GridModel(
-        "assets/ic_passbook_header.png", "Passbook", Colors.white));
+        Icon(Icons.send_to_mobile_outlined), "UPI", Colors.white));
+    list.add(new GridModel(Icon(Icons.history), "Passbook", Colors.white));
     list.add(new GridModel(
-        "assets/calendar_blue.png", "Paytm\nPostpaid", Colors.white));
-    list.add(new GridModel(
-        "assets/add_money_passbook.png", "Add Money", Colors.white));
-    list.add(new GridModel("assets/book.png", "Link Account", Colors.white));
-    list.add(new GridModel(
-        "assets/ic_passbook_header.png", "Link Account", Colors.white));
-    list.add(new GridModel("assets/book.png", "Link Account", Colors.white));
+        Icon(Icons.calendar_today_outlined), "Paytm\nPostpaid", Colors.white));
+    list.add(new GridModel(Icon(Icons.add), "Add Money", Colors.white));
+    list.add(new GridModel(Icon(Icons.history), "Link Account", Colors.white));
+    list.add(new GridModel(Icon(Icons.history), "Link Account", Colors.white));
+    list.add(new GridModel(Icon(Icons.history), "Link Account", Colors.white));
 
     return list;
   }
@@ -252,12 +251,13 @@ class GridItem extends StatelessWidget {
                 onPressed: () {
                   print('shit');
                 },
-                icon: Image.asset(
-                  gridModel.imagePath,
-                  width: 30,
-                  height: 30,
-                  color: gridModel.color,
-                ),
+                icon: gridModel.icon,
+                // Image.asset(
+                //   gridModel.icon,
+                //   width: 30,
+                //   height: 30,
+                //   color: gridModel.color,
+                // ),
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 5),
@@ -292,12 +292,13 @@ class GridItemTop extends StatelessWidget {
             children: <Widget>[
               IconButton(
                 onPressed: () {},
-                icon: Image.asset(
-                  gridModel.imagePath,
-                  width: 30,
-                  height: 30,
-                  color: gridModel.color,
-                ),
+                icon: gridModel.icon,
+                // Image.asset(
+                //   gridModel.imagePath,
+                //   width: 30,
+                //   height: 30,
+                //   color: gridModel.color,
+                // ),
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 5),

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 class GridModel {
-  String _imagePath;
+  Icon _icon;
   String _title;
   Color _color;
 
-  GridModel(this._imagePath, this._title, this._color);
+  GridModel(this._icon, this._title, this._color);
 
   Color get color => _color;
 
@@ -19,9 +19,9 @@ class GridModel {
     _title = value;
   }
 
-  String get imagePath => _imagePath;
+  Icon get icon => _icon;
 
-  set imagePath(String value) {
-    _imagePath = value;
+  set imagePath(Icon value) {
+    _icon = value;
   }
 }

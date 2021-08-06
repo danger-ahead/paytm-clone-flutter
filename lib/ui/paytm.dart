@@ -4,7 +4,6 @@ import 'package:flutter_paytm_ui/nav_bar_tabs/home.dart';
 import 'package:flutter_paytm_ui/nav_bar_tabs/inbox.dart';
 import 'package:flutter_paytm_ui/nav_bar_tabs/mall.dart';
 import 'package:flutter_paytm_ui/nav_bar_tabs/qr.dart';
-import '../others/common.dart';
 
 class Paytm extends StatefulWidget {
   @override
@@ -54,12 +53,7 @@ class _PaytmState extends State<Paytm> {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(right: 20),
-                    child: Image.asset(
-                      "assets/uanotif_nomessage.png",
-                      color: Colors.blue,
-                      width: 20,
-                      height: 20,
-                    ),
+                    child: Icon(Icons.notifications, color: Colors.blue),
                   ),
                 ],
               ),
@@ -82,7 +76,7 @@ class _PaytmState extends State<Paytm> {
         unselectedItemColor: Colors.grey,
         selectedItemColor: Colors.blue[800],
         onTap: onTabTapped,
-        currentIndex: 0,
+        currentIndex: _currentIndexBtmNavBar,
         type: BottomNavigationBarType.fixed,
         items: [
           new BottomNavigationBarItem(
@@ -90,11 +84,11 @@ class _PaytmState extends State<Paytm> {
             label: 'Home',
           ),
           new BottomNavigationBarItem(
-            icon: imgBtmNavBar("assets/shopping-bagg.png"),
+            icon: Icon(Icons.shopping_bag_outlined),
             label: 'Mall',
           ),
           new BottomNavigationBarItem(
-            icon: imgBtmNavBar("assets/qr-code.png"),
+            icon: Icon(Icons.qr_code_2),
             label: 'Scan',
           ),
           new BottomNavigationBarItem(
