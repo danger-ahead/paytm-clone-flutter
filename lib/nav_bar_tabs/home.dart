@@ -36,8 +36,8 @@ class Home extends StatelessWidget {
                     return GridView.count(
                       crossAxisCount: 4,
                       children: List<GridItemTop>.generate((4), (int index) {
-                          return GridItemTop(
-                              _getGridList()[index + (_currentIndexUp * 4)]);
+                        return GridItemTop(
+                            _getGridList()[index + (_currentIndexUp * 4)]);
                       }),
                     );
                   }),

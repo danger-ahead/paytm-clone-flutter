@@ -1,0 +1,24 @@
+import 'package:flutter/material.dart';
+
+Widget customContainer(){
+    return Container(
+        height: 60,
+        width: 40,
+        color: Colors.grey,
+        child: Center(
+            child: TextField(
+                keyboardType: TextInputType.number,
+                textAlign: TextAlign.center,
+                maxLength: 1,
+                decoration: new InputDecoration(
+                    counterText: "",
+                    border: InputBorder.none,
+                    focusedBorder: InputBorder.none,
+                    enabledBorder: InputBorder.none,
+                    errorBorder: InputBorder.none,
+                    disabledBorder: InputBorder.none,
+                ),
+            ),
+        ),
+    );
+}
