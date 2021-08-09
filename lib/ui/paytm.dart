@@ -80,7 +80,7 @@ class _PaytmState extends State<Paytm> {
         type: BottomNavigationBarType.fixed,
         items: [
           new BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: Icon(Icons.home_outlined),
             label: 'Home',
           ),
           new BottomNavigationBarItem(
@@ -92,11 +92,11 @@ class _PaytmState extends State<Paytm> {
             label: 'Scan',
           ),
           new BottomNavigationBarItem(
-            icon: Icon(Icons.account_balance),
+            icon: Icon(Icons.account_balance_outlined),
             label: 'Bank',
           ),
           new BottomNavigationBarItem(
-            icon: Icon(Icons.message),
+            icon: Icon(Icons.message_outlined),
             label: 'Inbox',
           ),
         ]);
