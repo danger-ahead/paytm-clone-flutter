@@ -1,4 +1,4 @@
-package aeologic.flutter_paytm_ui;
+package dangerahead.paytm;
 
 import io.flutter.embedding.android.FlutterActivity;
 

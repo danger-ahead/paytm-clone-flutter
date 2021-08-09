@@ -1,8 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="aeologic.flutter_paytm_ui">
+    package="dangerahead.paytm">
 
     <application
-        android:label="flutter_paytm_ui" android:icon="@mipmap/ic_launcher">
+        android:label="Paytm" android:icon="@mipmap/ic_launcher">
         <meta-data android:name="flutterEmbedding" android:value="2"/>
         <activity
             android:name=".MainActivity"
