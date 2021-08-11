@@ -2,11 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:flutter_paytm_ui/model/CreditCard.dart';
 
 class BankDetails extends StatelessWidget {
-  final GlobalKey _keyRed = GlobalKey();
-
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
+    String creditCardLogo = "assets/paytm/payments_bank_logo.png";
+    String creditCardChip = "assets/paytm/credit-card-chip.png";
+    String cardHolder = "SEKHAR GHOSH";
+    String expiryDate = "Expiry\n03/26";
+    String cardProvider = "assets/paytm/Rupay-Logo.png";
+    String cardNumber = "1974    4785    4589";
+    List<Color> cardGradients = [
+      Colors.grey[300],
+      Colors.white,
+      Colors.grey[300],
+      Colors.white,
+      Colors.grey[300]
+    ];
+    List<double> cardGradientsPoints = [0, 0.25, 0.5, 0.75, 1.0];
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
@@ -24,10 +36,34 @@ class BankDetails extends StatelessWidget {
         ),
         body: Column(
           children: [
-            creditCard(width), //https://stackoverflow.com/a/64044475/10951873
+            creditCard(
+              width,
+              creditCardLogo,
+              creditCardChip,
+              cardNumber,
+              cardHolder,
+              expiryDate,
+              cardProvider,
+              cardGradients,
+              cardGradientsPoints,
+            ),
+            //https://stackoverflow.com/a/64044475/10951873
             Expanded(
               child: ListView(
-                children: [],
+                children: [
+                  ListTile(
+                    title: Text('Balance'),
+                    subtitle: Text('₹5466'),
+                  ),
+                  ListTile(
+                    title: Text('Wallet'),
+                    subtitle: Text('₹90'),
+                  ),
+                  ListTile(
+                    title: Text('Paytm Money'),
+                    subtitle: Text(''),
+                  ),
+                ],
               ),
             ),
           ],

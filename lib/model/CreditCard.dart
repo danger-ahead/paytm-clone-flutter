@@ -1,6 +1,15 @@
 import 'package:flutter/material.dart';
 
-Widget creditCard(double width) {
+Widget creditCard(
+    double width,
+    String creditCardLogo,
+    String creditCardChip,
+    String cardNumber,
+    String cardHolder,
+    String expiryDate,
+    String cardProvider,
+    List<Color> cardGradients,
+    List<double> cardGradientsPoints) {
   return Padding(
     padding: const EdgeInsets.all(8.0),
     child: Container(
@@ -13,7 +22,13 @@ Widget creditCard(double width) {
               offset: Offset(2.0, 2.0), // shadow direction: bottom right
             )
           ],
-          color: Colors.white,
+          //https://medium.com/flutter-community/how-to-improve-your-flutter-application-with-gradient-designs-63180ba96124
+          gradient: LinearGradient(
+            begin: Alignment.bottomLeft,
+            end: Alignment.topRight,
+            stops: cardGradientsPoints,
+            colors: cardGradients,
+          ),
           border: Border.all(width: 0.5),
           borderRadius: BorderRadius.all(Radius.circular(20))),
       width: width,
@@ -27,7 +42,7 @@ Widget creditCard(double width) {
               Padding(
                 padding: const EdgeInsets.only(left: 16.0),
                 child: Image.asset(
-                  "assets/paytm/payments_bank_logo.png",
+                  creditCardLogo,
                   scale: 2,
                 ),
               ),
@@ -37,9 +52,8 @@ Widget creditCard(double width) {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.only(left: 15.0),
-                child:
-                    Image.asset("assets/paytm/credit-card-chip.png", scale: 4),
+                padding: const EdgeInsets.only(left: 26.0),
+                child: Image.asset(creditCardChip, scale: 3.5),
               ),
             ],
           ),
@@ -47,7 +61,7 @@ Widget creditCard(double width) {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                '1974    4785    4589',
+                cardNumber,
                 textScaleFactor: 2,
               ),
             ],
@@ -58,17 +72,17 @@ Widget creditCard(double width) {
               Padding(
                 padding: const EdgeInsets.only(left: 16.0),
                 child: Text(
-                  'SEKHAR GHOSH',
+                  cardHolder,
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
               ),
               Text(
-                'Expiry\n03/26',
+                expiryDate,
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
               Padding(
                 padding: const EdgeInsets.only(right: 16.0),
-                child: Image.asset("assets/paytm/Rupay-Logo.png", scale: 4),
+                child: Image.asset(cardProvider, scale: 4),
               ),
             ],
           ),
