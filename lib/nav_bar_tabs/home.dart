@@ -11,23 +11,71 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: new Column(
-        children: <Widget>[
-          Container(
-              width: double.maxFinite,
-              color: Colors.blue[800],
-              child: Container(
-                child: CarouselSlider(
+    return new ListView(
+      children: <Widget>[
+        Container(
+            width: double.maxFinite,
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.bottomCenter,
+                end: Alignment.topCenter,
+                colors: [Colors.blue[200], Colors.white],
+              ),
+            ),
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(
+                      top: 16.0, left: 16.0, right: 16.0, bottom: 16.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      IconButton(
+                        icon: Icon(Icons.dehaze, color: Colors.grey),
+                        onPressed: () {},
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Padding(
+                              padding: const EdgeInsets.only(right: 32.0),
+                              child: IconButton(
+                                icon: Icon(Icons.search, color: Colors.grey),
+                                onPressed: () {},
+                              )),
+                          IconButton(
+                            icon: Icon(
+                              Icons.notifications_outlined,
+                              color: Colors.grey,
+                            ),
+                            onPressed: () {},
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 48.0),
+                  child: Image.asset(
+                    "assets/paytm/logo.png",
+                    scale: 6,
+                  ),
+                ),
+                CarouselSlider(
                   options: CarouselOptions(
                     reverse: false,
-                    aspectRatio: 5,
+                    aspectRatio: 4.4,
                     viewportFraction: 1.0,
                     initialPage: 0,
                     enlargeCenterPage: true,
                     autoPlay: false,
                     onPageChanged: (index, reason) {
-                      _currentIndexUp = index == 2 || index == 3 ? 0 : index;
+                      _currentIndexUp = index == 2
+                          ? 0
+                          : index == 3
+                              ? 1
+                              : index;
                       (context as Element)
                           .markNeedsBuild(); //Can't use setState()
                     },
@@ -42,7 +90,8 @@ class Home extends StatelessWidget {
                     );
                   }),
                 ),
-              )
+              ],
+            )
 
 //            GridView.builder(
 //              gridDelegate:
@@ -53,72 +102,71 @@ class Home extends StatelessWidget {
 //                return GridList(_getGridList()[index]);
 //              },
 //            ),
-              ),
-          Container(
-            color: Colors.blue[800],
-            child: new Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: List.generate(2, (int index) {
-                return dots(_currentIndexUp, index);
-              }),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(bottom: 1),
-            child: Container(
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(20),
-                      topRight: Radius.circular(20))),
-              height: 40,
-              width: MediaQuery.of(context).size.width,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  Icon(Icons.highlight),
-                  Text('Get Rs.1000 Cashback on Auto/Taxi rides !'),
-                  Icon(
-                    Icons.arrow_right,
-                    color: Colors.black,
-                  ),
-                ],
-              ),
-            ),
-          ),
-          GridView.count(
-            shrinkWrap: true,
-            physics: NeverScrollableScrollPhysics(),
-            crossAxisCount: 4,
-            children: List<GridItem>.generate(12, (int index) {
-              return GridItem(_getGridItemList()[index]);
+        Container(
+          color: Colors.blue[200],
+          child: new Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: List.generate(2, (int index) {
+              return dots(_currentIndexUp, index);
             }),
           ),
-          Padding(
-            padding: const EdgeInsets.only(top: 1, bottom: 5),
-            child: Container(
-              color: Colors.white,
-              child: CarouselSlider(
-                options: CarouselOptions(
-                  aspectRatio: 2,
-                  viewportFraction: 1.0,
-                  initialPage: 0,
-                  autoPlayInterval: Duration(seconds: 2),
-                  autoPlayAnimationDuration: Duration(milliseconds: 800),
-                  pauseAutoPlayOnTouch: true,
-                  enlargeCenterPage: true,
-                  autoPlay: true,
-                  onPageChanged: (index, reason) {
-                    _currentIndex = index;
-                    (context as Element).markNeedsBuild();
-                  },
+        ),
+        Padding(
+          padding: const EdgeInsets.only(bottom: 1),
+          child: Container(
+            decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(20),
+                    topRight: Radius.circular(20))),
+            height: 40,
+            width: MediaQuery.of(context).size.width,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                Icon(Icons.highlight),
+                Text('Get Rs.1000 Cashback on Auto/Taxi rides !'),
+                Icon(
+                  Icons.arrow_right,
+                  color: Colors.black,
                 ),
-                items: CarouselSliderList(_getImageSliderList()),
-              ),
+              ],
             ),
           ),
-        ],
-      ),
+        ),
+        GridView.count(
+          shrinkWrap: true,
+          physics: NeverScrollableScrollPhysics(),
+          crossAxisCount: 4,
+          children: List<GridItem>.generate(12, (int index) {
+            return GridItem(_getGridItemList()[index]);
+          }),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: 1, bottom: 5),
+          child: Container(
+            color: Colors.white,
+            child: CarouselSlider(
+              options: CarouselOptions(
+                aspectRatio: 2,
+                viewportFraction: 1.0,
+                initialPage: 0,
+                autoPlayInterval: Duration(seconds: 2),
+                autoPlayAnimationDuration: Duration(milliseconds: 800),
+                pauseAutoPlayOnTouch: true,
+                enlargeCenterPage: true,
+                autoPlay: true,
+                onPageChanged: (index, reason) {
+                  _currentIndex = index;
+                  (context as Element).markNeedsBuild();
+                },
+              ),
+              items: CarouselSliderList(_getImageSliderList()),
+            ),
+          ),
+        ),
+      ],
     );
   }
 

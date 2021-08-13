@@ -23,46 +23,9 @@ class _PaytmState extends State<Paytm> {
       Inbox(),
     ];
     return Scaffold(
-        appBar: _appBar(),
         body: _btmNavBar[_currentIndexBtmNavBar],
         backgroundColor: Colors.grey[200],
         bottomNavigationBar: _bottomTab());
-  }
-
-  Widget _appBar() {
-    return new AppBar(
-      title: Row(
-        children: <Widget>[
-          Icon(Icons.dehaze),
-          Padding(
-            padding: const EdgeInsets.only(left: 28),
-            child: Container(
-              decoration: BoxDecoration(
-                  color: Colors.white, borderRadius: BorderRadius.circular(10)),
-              height: 40,
-              width: MediaQuery.of(context).size.width / 1.35,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.only(left: 20),
-                    child: Icon(
-                      Icons.search,
-                      color: Colors.blue,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(right: 20),
-                    child: Icon(Icons.notifications, color: Colors.blue),
-                  ),
-                ],
-              ),
-            ),
-          )
-        ],
-      ),
-      elevation: 0,
-    );
   }
 
   void onTabTapped(int index) {
