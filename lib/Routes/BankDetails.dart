@@ -7,16 +7,16 @@ class BankDetails extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     String creditCardLogo = "assets/paytm/payments_bank_logo.png";
     String creditCardChip = "assets/paytm/credit-card-chip.png";
-    String cardHolder = "SEKHAR GHOSH";
+    String cardHolder = "SHOURYA S.";
     String expiryDate = "Expiry\n03/26";
     String cardProvider = "assets/paytm/Rupay-Logo.png";
     String cardNumber = "1974    4785    4589";
     List<Color> cardGradients = [
-      Colors.grey[300],
+      Colors.grey[100],
       Colors.white,
-      Colors.grey[300],
+      Colors.grey[100],
       Colors.white,
-      Colors.grey[300]
+      Colors.grey[100]
     ];
     List<double> cardGradientsPoints = [0, 0.25, 0.5, 0.75, 1.0];
     return Scaffold(

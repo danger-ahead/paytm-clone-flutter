@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_paytm_ui/model/Gridmodel.dart';
+import 'package:flutter_paytm_ui/model/HomeIconButtons.dart';
 import 'package:flutter_paytm_ui/model/ImageSliderModel.dart';
 
 class Home extends StatelessWidget {
@@ -91,18 +92,8 @@ class Home extends StatelessWidget {
                   }),
                 ),
               ],
-            )
-
-//            GridView.builder(
-//              gridDelegate:
-//                  SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1),
-//              scrollDirection: Axis.horizontal,
-//              itemCount: _getGridList().length,
-//              itemBuilder: (context, index) {
-//                return GridList(_getGridList()[index]);
-//              },
-//            ),
-            ),
+          )
+        ),
         Container(
           color: Colors.blue[200],
           child: new Row(
@@ -111,6 +102,110 @@ class Home extends StatelessWidget {
               return dots(_currentIndexUp, index);
             }),
           ),
+        ),
+        Container(
+          color: Colors.white,
+          child: Column(children: [
+            Padding(
+              padding: const EdgeInsets.only(top: 12.0, left: 12.0, bottom: 8.0),
+              child: Row(
+                children: [
+                    Text(
+                      'Recharges & Bill Payments',
+                      textScaleFactor: 1.3,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                  ),
+                ],
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                mobileRecharge,
+                electricity,
+                taxes,
+                fees,
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                loans,
+                gas,
+                dth,
+                rechargeOthers,
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 16.0, left: 12.0, bottom: 8.0),
+              child: Row(
+                children: [
+                    Text(
+                      'Ticket Booking & Travelling',
+                      textScaleFactor: 1.3,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                  ),
+                ],
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                bus,
+                train,
+                flight,
+                taxi,
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 16.0, left: 12.0, bottom: 8.0),
+              child: Row(
+                children: [
+                    Text(
+                      'Entertainment',
+                      textScaleFactor: 1.3,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                  ),
+                ],
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                movie,
+                events,
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 16.0, left: 12.0, bottom: 8.0),
+              child: Row(
+                children: [
+                    Text(
+                      'Insurance, Stocks & Gold',
+                      textScaleFactor: 1.3,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                  ),
+                ],
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                car,
+                bike,
+                stocks,
+                gold,
+              ],
+            ),
+          ],),
         ),
         Padding(
           padding: const EdgeInsets.only(bottom: 1),
@@ -134,14 +229,6 @@ class Home extends StatelessWidget {
               ],
             ),
           ),
-        ),
-        GridView.count(
-          shrinkWrap: true,
-          physics: NeverScrollableScrollPhysics(),
-          crossAxisCount: 4,
-          children: List<GridItem>.generate(12, (int index) {
-            return GridItem(_getGridItemList()[index]);
-          }),
         ),
         Padding(
           padding: const EdgeInsets.only(top: 1, bottom: 5),
@@ -168,30 +255,6 @@ class Home extends StatelessWidget {
         ),
       ],
     );
-  }
-
-  List<GridModel> _getGridItemList() {
-    List<GridModel> list = [];
-    list.add(
-        new GridModel(Icon(Icons.mobile_friendly), "Mobile\nprepaid", null));
-    list.add(
-        new GridModel(Icon(Icons.airplane_ticket_outlined), "Flights", null));
-    list.add(new GridModel(
-        Icon(Icons.movie_creation_outlined), "Movie Tickets", null));
-    list.add(new GridModel(Icon(Icons.music_note_outlined), "Events", null));
-    list.add(
-        new GridModel(Icon(Icons.mobile_friendly), "Mobile\nPostpaid", null));
-    list.add(new GridModel(Icon(Icons.gamepad_outlined), "Games", null));
-    list.add(new GridModel(Icon(Icons.attach_money), "Gold", null));
-    list.add(new GridModel(
-        Icon(Icons.electrical_services_outlined), "Electricity", null));
-    list.add(new GridModel(Icon(Icons.train_outlined), "Train Tickets", null));
-    list.add(
-      new GridModel(Icon(Icons.shopping_basket_outlined), "Shopping", null),
-    );
-    list.add(new GridModel(Icon(Icons.satellite_outlined), "DTH", null));
-    list.add(new GridModel(Icon(Icons.menu), "More", null));
-    return list;
   }
 
   List<GridModel> _getGridList() {
@@ -276,50 +339,6 @@ class Home extends StatelessWidget {
 
   Color dotColor(int index) {
     return _currentIndexUp == index ? Colors.white : Colors.grey;
-  }
-}
-
-class GridItem extends StatelessWidget {
-  final GridModel gridModel;
-
-  GridItem(this.gridModel);
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(1 / 2),
-      child: Container(
-        color: Colors.white,
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              IconButton(
-                onPressed: () {
-                  print('shit');
-                },
-                icon: gridModel.icon,
-                // Image.asset(
-                //   gridModel.icon,
-                //   width: 30,
-                //   height: 30,
-                //   color: gridModel.color,
-                // ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 5),
-                child: Text(
-                  gridModel.title,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 12),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
   }
 }
 
