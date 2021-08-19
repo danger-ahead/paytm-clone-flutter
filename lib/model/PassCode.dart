@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_paytm_ui/Routes/BankDetails.dart';
 
 String passCode = '';
-Color customBoxDecorationColor0 = Colors.blue[50];
-Color customBoxDecorationColor1 = Colors.blue[100];
-Color customBoxDecorationColor2 = Colors.blue[100];
-Color customBoxDecorationColor3 = Colors.blue[100];
+// Color customBoxDecorationColor0 = Colors.blue[100];
+// Color customBoxDecorationColor1 = Colors.blue[100];
+// Color customBoxDecorationColor2 = Colors.blue[100];
+// Color customBoxDecorationColor3 = Colors.blue[100];
 
 InputDecoration customInputDecoration() {
   return InputDecoration(
@@ -55,21 +55,27 @@ BoxDecoration customBoxDecoration3(Color customBoxDecorationColor) {
 //blocks for customizing the 4 boxes ends
 
 Widget customContainer0(
-    FocusNode focusNode1, TextEditingController _controller0, BuildContext context) {
+    FocusNode focusNode1,
+    TextEditingController _controller0,
+    List<Color> customBoxDecorationColor,
+    BuildContext context) {
   return Container(
-    decoration: customBoxDecoration0(customBoxDecorationColor0),
+    decoration: customBoxDecoration0(customBoxDecorationColor[0]),
     height: 60,
     width: 40,
     child: Center(
       child: TextField(
         controller: _controller0,
         obscureText: true,
-        autofocus: true,
         obscuringCharacter: '*',
-        onChanged: (String value) async{
+        onTap: () async {
+          customBoxDecorationColor[0] = Colors.blue[50];
+          (context as Element).markNeedsBuild();
+        },
+        onChanged: (String value) async {
           focusNode1.requestFocus(); //requests focus of 2nd textfield
-          customBoxDecorationColor0 = Colors.blue[100];
-          customBoxDecorationColor1 = Colors.blue[50];
+          customBoxDecorationColor[0] = Colors.blue[100];
+          customBoxDecorationColor[1] = Colors.blue[50];
           (context as Element).markNeedsBuild();
         },
         keyboardType: TextInputType.number,
@@ -81,10 +87,14 @@ Widget customContainer0(
   );
 }
 
-Widget customContainer1(FocusNode focusNode1, FocusNode focusNode2,
-    TextEditingController _controller, BuildContext context) {
+Widget customContainer1(
+    FocusNode focusNode1,
+    FocusNode focusNode2,
+    TextEditingController _controller,
+    List<Color> customBoxDecorationColor,
+    BuildContext context) {
   return Container(
-    decoration: customBoxDecoration1(customBoxDecorationColor1),
+    decoration: customBoxDecoration1(customBoxDecorationColor[1]),
     height: 60,
     width: 40,
     child: Center(
@@ -93,10 +103,10 @@ Widget customContainer1(FocusNode focusNode1, FocusNode focusNode2,
         obscureText: true,
         obscuringCharacter: '*',
         focusNode: focusNode1, //Own FocusNode set by 1st TextField
-        onChanged: (String value) async{
+        onChanged: (String value) async {
           focusNode2.requestFocus(); //requests focus of 3nd textfield
-          customBoxDecorationColor1 = Colors.blue[100];
-          customBoxDecorationColor2 = Colors.blue[50];
+          customBoxDecorationColor[1] = Colors.blue[100];
+          customBoxDecorationColor[2] = Colors.blue[50];
           (context as Element).markNeedsBuild();
         },
         keyboardType: TextInputType.number,
@@ -108,10 +118,14 @@ Widget customContainer1(FocusNode focusNode1, FocusNode focusNode2,
   );
 }
 
-Widget customContainer2(FocusNode focusNode2, FocusNode focusNode3,
-    TextEditingController _controller, BuildContext context) {
+Widget customContainer2(
+    FocusNode focusNode2,
+    FocusNode focusNode3,
+    TextEditingController _controller,
+    List<Color> customBoxDecorationColor,
+    BuildContext context) {
   return Container(
-    decoration: customBoxDecoration2(customBoxDecorationColor2),
+    decoration: customBoxDecoration2(customBoxDecorationColor[2]),
     height: 60,
     width: 40,
     child: Center(
@@ -120,9 +134,9 @@ Widget customContainer2(FocusNode focusNode2, FocusNode focusNode3,
         obscureText: true,
         obscuringCharacter: '*',
         focusNode: focusNode2,
-        onChanged: (String value) async{
-          customBoxDecorationColor2 = Colors.blue[100];
-          customBoxDecorationColor3 = Colors.blue[50];
+        onChanged: (String value) async {
+          customBoxDecorationColor[2] = Colors.blue[100];
+          customBoxDecorationColor[3] = Colors.blue[50];
           focusNode3.requestFocus();
           (context as Element).markNeedsBuild();
         },
@@ -141,9 +155,10 @@ Widget customContainer3(
     TextEditingController _controller1,
     TextEditingController _controller2,
     TextEditingController _controller3,
+    List<Color> customBoxDecorationColor,
     BuildContext context) {
   return Container(
-    decoration: customBoxDecoration3(customBoxDecorationColor3),
+    decoration: customBoxDecoration3(customBoxDecorationColor[3]),
     height: 60,
     width: 40,
     child: Center(
@@ -152,12 +167,8 @@ Widget customContainer3(
         obscureText: true,
         obscuringCharacter: '*',
         focusNode: focusNode3,
-        onChanged: (String value) async{
-          customBoxDecorationColor0 = Colors.blue[50];
-          customBoxDecorationColor1 = Colors.blue[100];
-          customBoxDecorationColor2 = Colors.blue[100];
-          customBoxDecorationColor3 = Colors.blue[100];
-          (context as Element).markNeedsBuild();
+        onChanged: (String value) async {
+          customBoxDecorationColor[3] = Colors.blue[100];
           /*contains the passcode entered by the user;
             can be used for checking if the passcode is right*/
           passCode += _controller0.text +
@@ -171,6 +182,10 @@ Widget customContainer3(
             return BankDetails();
           }));
           passCode = '';
+          _controller0.text = '';
+          _controller1.text = '';
+          _controller2.text = '';
+          _controller3.text = '';
         },
         keyboardType: TextInputType.number,
         textAlign: TextAlign.center,

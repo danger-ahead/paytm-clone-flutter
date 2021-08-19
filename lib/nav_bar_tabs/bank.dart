@@ -12,6 +12,13 @@ class Bank extends StatelessWidget {
     FocusNode focusNode2 = FocusNode();
     FocusNode focusNode3 = FocusNode();
 
+    List<Color> customBoxDecorationColor = [
+      Colors.blue[100],
+      Colors.blue[100],
+      Colors.blue[100],
+      Colors.blue[100]
+    ];
+
     //https://stackoverflow.com/a/68576118/10951873
     return LayoutBuilder(builder: (context, viewportConstraints) {
       return SingleChildScrollView(
@@ -34,7 +41,9 @@ class Bank extends StatelessWidget {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(bottom: 24.0),
-                  child: Text('Enter Passcode'),
+                  child: Text('Enter Passcode',
+                      textScaleFactor: 1.1,
+                      style: TextStyle(fontWeight: FontWeight.bold)),
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 100),
@@ -42,11 +51,20 @@ class Bank extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      customContainer0(focusNode1, _controller0, context),
-                      customContainer1(focusNode1, focusNode2, _controller1, context),
-                      customContainer2(focusNode2, focusNode3, _controller2, context),
-                      customContainer3(focusNode3, _controller0, _controller1,
-                          _controller2, _controller3, context),
+                      customContainer0(focusNode1, _controller0,
+                          customBoxDecorationColor, context),
+                      customContainer1(focusNode1, focusNode2, _controller1,
+                          customBoxDecorationColor, context),
+                      customContainer2(focusNode2, focusNode3, _controller2,
+                          customBoxDecorationColor, context),
+                      customContainer3(
+                          focusNode3,
+                          _controller0,
+                          _controller1,
+                          _controller2,
+                          _controller3,
+                          customBoxDecorationColor,
+                          context),
                     ],
                   ),
                 ),

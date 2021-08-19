@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
 
+Widget homeIconText(String text) {
+  return Text(text,
+      textScaleFactor: 1.1, style: TextStyle(fontWeight: FontWeight.bold));
+}
+
 Widget mobileRecharge = Container(
   child: Column(
     children: [
       IconButton(onPressed: () {}, icon: Icon(Icons.mobile_friendly)),
-      Text('Mobile\nRecharge'),
+      Column(
+        children: [
+          homeIconText('Mobile'),
+          homeIconText('Recharge'),
+        ],
+      ),
     ],
   ),
 );
@@ -13,16 +23,52 @@ Widget train = Container(
   child: Column(
     children: [
       IconButton(onPressed: () {}, icon: Icon(Icons.train_outlined)),
-      Text('Train'),
+      homeIconText('Train'),
     ],
   ),
+);
+
+Widget sendMoney = Column(
+  children: [
+    IconButton(onPressed: () {}, icon: Icon(Icons.send_outlined)),
+    Column(
+      children: [
+        homeIconText('Send'),
+        homeIconText('Money'),
+      ],
+    ),
+  ],
+);
+
+Widget upi = Column(
+  children: [
+    IconButton(onPressed: () {}, icon: Icon(Icons.send_to_mobile_outlined)),
+    Column(
+      children: [
+        homeIconText('Send'),
+        homeIconText('Using UPI'),
+      ],
+    ),
+  ],
+);
+
+Widget postpaid = Column(
+  children: [
+    IconButton(onPressed: () {}, icon: Icon(Icons.calendar_today_outlined)),
+    Column(
+      children: [
+        homeIconText('Paytm'),
+        homeIconText('Postpaid'),
+      ],
+    ),
+  ],
 );
 
 Widget flight = Container(
   child: Column(
     children: [
       IconButton(onPressed: () {}, icon: Icon(Icons.flight_outlined)),
-      Text('Flight'),
+      homeIconText('Flight'),
     ],
   ),
 );
@@ -31,7 +77,7 @@ Widget car = Container(
   child: Column(
     children: [
       IconButton(onPressed: () {}, icon: Icon(Icons.car_rental_outlined)),
-      Text('Car'),
+      homeIconText('Car'),
     ],
   ),
 );
@@ -40,7 +86,7 @@ Widget bike = Container(
   child: Column(
     children: [
       IconButton(onPressed: () {}, icon: Icon(Icons.two_wheeler_outlined)),
-      Text('Bike'),
+      homeIconText('Bike'),
     ],
   ),
 );
@@ -49,7 +95,7 @@ Widget stocks = Container(
   child: Column(
     children: [
       IconButton(onPressed: () {}, icon: Icon(Icons.bar_chart_outlined)),
-      Text('Stocks'),
+      homeIconText('Stocks'),
     ],
   ),
 );
@@ -58,7 +104,7 @@ Widget gold = Container(
   child: Column(
     children: [
       IconButton(onPressed: () {}, icon: Icon(Icons.attach_money_outlined)),
-      Text('Gold'),
+      homeIconText('Gold'),
     ],
   ),
 );
@@ -66,8 +112,9 @@ Widget gold = Container(
 Widget electricity = Container(
   child: Column(
     children: [
-      IconButton(onPressed: () {}, icon: Icon(Icons.electrical_services_outlined)),
-      Text('Electricity'),
+      IconButton(
+          onPressed: () {}, icon: Icon(Icons.electrical_services_outlined)),
+      homeIconText('Electricity'),
     ],
   ),
 );
@@ -75,7 +122,7 @@ Widget movie = Container(
   child: Column(
     children: [
       IconButton(onPressed: () {}, icon: Icon(Icons.movie_creation_outlined)),
-      Text('Movie'),
+      homeIconText('Movie'),
     ],
   ),
 );
@@ -84,7 +131,7 @@ Widget events = Container(
   child: Column(
     children: [
       IconButton(onPressed: () {}, icon: Icon(Icons.music_note_outlined)),
-      Text('Events'),
+      homeIconText('Events'),
     ],
   ),
 );
@@ -93,7 +140,7 @@ Widget dth = Container(
   child: Column(
     children: [
       IconButton(onPressed: () {}, icon: Icon(Icons.tv_outlined)),
-      Text('DTH'),
+      homeIconText('DTH'),
     ],
   ),
 );
@@ -102,7 +149,7 @@ Widget loans = Container(
   child: Column(
     children: [
       IconButton(onPressed: () {}, icon: Icon(Icons.credit_card_outlined)),
-      Text('Loans'),
+      homeIconText('Loans'),
     ],
   ),
 );
@@ -111,7 +158,7 @@ Widget taxes = Container(
   child: Column(
     children: [
       IconButton(onPressed: () {}, icon: Icon(Icons.money_outlined)),
-      Text('Taxes'),
+      homeIconText('Taxes'),
     ],
   ),
 );
@@ -120,7 +167,7 @@ Widget taxi = Container(
   child: Column(
     children: [
       IconButton(onPressed: () {}, icon: Icon(Icons.local_taxi_outlined)),
-      Text('Taxi'),
+      homeIconText('Taxi'),
     ],
   ),
 );
@@ -129,7 +176,7 @@ Widget fees = Container(
   child: Column(
     children: [
       IconButton(onPressed: () {}, icon: Icon(Icons.school)),
-      Text('Fees'),
+      homeIconText('Fees'),
     ],
   ),
 );
@@ -138,7 +185,7 @@ Widget bus = Container(
   child: Column(
     children: [
       IconButton(onPressed: () {}, icon: Icon(Icons.directions_bus_outlined)),
-      Text('Bus'),
+      homeIconText('Bus'),
     ],
   ),
 );
@@ -146,8 +193,9 @@ Widget bus = Container(
 Widget gas = Container(
   child: Column(
     children: [
-      IconButton(onPressed: () {}, icon: Icon(Icons.local_gas_station_outlined)),
-      Text('Gas'),
+      IconButton(
+          onPressed: () {}, icon: Icon(Icons.local_gas_station_outlined)),
+      homeIconText('Gas'),
     ],
   ),
 );
@@ -155,8 +203,14 @@ Widget gas = Container(
 Widget rechargeOthers = Container(
   child: Column(
     children: [
-      IconButton(onPressed: () {}, icon: Icon(Icons.arrow_forward_ios_outlined)),
-      Text('Others'),
+      IconButton(
+          onPressed: () {}, icon: Icon(Icons.arrow_forward_ios_outlined)),
+      Column(
+        children: [
+          homeIconText('Other'),
+          homeIconText('Services'),
+        ],
+      ),
     ],
   ),
 );

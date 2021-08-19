@@ -12,248 +12,277 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new ListView(
-      children: <Widget>[
-        Container(
-            width: double.maxFinite,
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.bottomCenter,
-                end: Alignment.topCenter,
-                colors: [Colors.blue[200], Colors.white],
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: new ListView(
+        children: <Widget>[
+          Container(
+              width: double.maxFinite,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.bottomCenter,
+                  end: Alignment.topCenter,
+                  colors: [Colors.blue[200], Colors.white],
+                ),
               ),
-            ),
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(
+                        top: 16.0, left: 16.0, right: 16.0, bottom: 16.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        IconButton(
+                          icon: Icon(Icons.dehaze, color: Colors.grey),
+                          onPressed: () {},
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Padding(
+                                padding: const EdgeInsets.only(right: 32.0),
+                                child: IconButton(
+                                  icon: Icon(Icons.search, color: Colors.grey),
+                                  onPressed: () {},
+                                )),
+                            IconButton(
+                              icon: Icon(
+                                Icons.notifications_outlined,
+                                color: Colors.grey,
+                              ),
+                              onPressed: () {},
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 48.0),
+                    child: Image.asset(
+                      "assets/paytm/logo.png",
+                      scale: 6,
+                    ),
+                  ),
+                  Container(
+                    padding: const EdgeInsets.only(
+                        bottom: 24.0, left: 20.0, right: 20.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        sendMoney,
+                        upi,
+                        postpaid,
+                      ],
+                    ),
+                  ),
+                ],
+              )),
+          Container(
+            color: Colors.white,
             child: Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(
-                      top: 16.0, left: 16.0, right: 16.0, bottom: 16.0),
+                  padding:
+                      const EdgeInsets.only(top: 12.0, left: 12.0, bottom: 8.0),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      IconButton(
-                        icon: Icon(Icons.dehaze, color: Colors.grey),
-                        onPressed: () {},
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Padding(
-                              padding: const EdgeInsets.only(right: 32.0),
-                              child: IconButton(
-                                icon: Icon(Icons.search, color: Colors.grey),
-                                onPressed: () {},
-                              )),
-                          IconButton(
-                            icon: Icon(
-                              Icons.notifications_outlined,
-                              color: Colors.grey,
-                            ),
-                            onPressed: () {},
-                          ),
-                        ],
+                    children: [
+                      Text(
+                        'Recharge & Bill Payments',
+                        textScaleFactor: 1.5,
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ],
                   ),
                 ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    mobileRecharge,
+                    electricity,
+                    taxes,
+                    fees,
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    loans,
+                    gas,
+                    dth,
+                    rechargeOthers,
+                  ],
+                ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 48.0),
-                  child: Image.asset(
-                    "assets/paytm/logo.png",
-                    scale: 6,
+                  padding:
+                      const EdgeInsets.only(top: 16.0, left: 12.0, bottom: 8.0),
+                  child: Row(
+                    children: [
+                      Text(
+                        'Ticket Booking & Travelling',
+                        textScaleFactor: 1.5,
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-                CarouselSlider(
-                  options: CarouselOptions(
-                    reverse: false,
-                    aspectRatio: 4.4,
-                    viewportFraction: 1.0,
-                    initialPage: 0,
-                    enlargeCenterPage: true,
-                    autoPlay: false,
-                    onPageChanged: (index, reason) {
-                      _currentIndexUp = index == 2
-                          ? 0
-                          : index == 3
-                              ? 1
-                              : index;
-                      (context as Element)
-                          .markNeedsBuild(); //Can't use setState()
-                    },
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    bus,
+                    train,
+                    flight,
+                    taxi,
+                  ],
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsets.only(top: 16.0, left: 12.0, bottom: 8.0),
+                  child: Row(
+                    children: [
+                      Text(
+                        'Entertainment',
+                        textScaleFactor: 1.5,
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
                   ),
-                  items: List<GridView>.generate((4), (int index) {
-                    return GridView.count(
-                      crossAxisCount: 4,
-                      children: List<GridItemTop>.generate((4), (int index) {
-                        return GridItemTop(
-                            _getGridList()[index + (_currentIndexUp * 4)]);
-                      }),
-                    );
-                  }),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    movie,
+                    events,
+                  ],
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsets.only(top: 16.0, left: 12.0, bottom: 8.0),
+                  child: Row(
+                    children: [
+                      Text(
+                        'Insurance, Stocks & Gold',
+                        textScaleFactor: 1.5,
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    car,
+                    bike,
+                    stocks,
+                    gold,
+                  ],
                 ),
               ],
-          )
-        ),
-        Container(
-          color: Colors.blue[200],
-          child: new Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: List.generate(2, (int index) {
-              return dots(_currentIndexUp, index);
-            }),
+            ),
           ),
-        ),
-        Container(
-          color: Colors.white,
-          child: Column(children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 12.0, left: 12.0, bottom: 8.0),
-              child: Row(
-                children: [
-                    Text(
-                      'Recharges & Bill Payments',
-                      textScaleFactor: 1.3,
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                      ),
-                  ),
-                ],
-              ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                mobileRecharge,
-                electricity,
-                taxes,
-                fees,
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                loans,
-                gas,
-                dth,
-                rechargeOthers,
-              ],
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 16.0, left: 12.0, bottom: 8.0),
-              child: Row(
-                children: [
-                    Text(
-                      'Ticket Booking & Travelling',
-                      textScaleFactor: 1.3,
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                      ),
-                  ),
-                ],
-              ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                bus,
-                train,
-                flight,
-                taxi,
-              ],
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 16.0, left: 12.0, bottom: 8.0),
-              child: Row(
-                children: [
-                    Text(
-                      'Entertainment',
-                      textScaleFactor: 1.3,
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                      ),
-                  ),
-                ],
-              ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                movie,
-                events,
-              ],
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 16.0, left: 12.0, bottom: 8.0),
-              child: Row(
-                children: [
-                    Text(
-                      'Insurance, Stocks & Gold',
-                      textScaleFactor: 1.3,
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                      ),
-                  ),
-                ],
-              ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                car,
-                bike,
-                stocks,
-                gold,
-              ],
-            ),
-          ],),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(bottom: 1),
-          child: Container(
-            decoration: BoxDecoration(
+          Padding(
+            padding: const EdgeInsets.only(top: 8, bottom: 1),
+            child: Container(
+              decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(20),
-                    topRight: Radius.circular(20))),
-            height: 40,
-            width: MediaQuery.of(context).size.width,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                Icon(Icons.highlight),
-                Text('Get Rs.1000 Cashback on Auto/Taxi rides !'),
-                Icon(
-                  Icons.arrow_right,
-                  color: Colors.black,
-                ),
-              ],
-            ),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(top: 1, bottom: 5),
-          child: Container(
-            color: Colors.white,
-            child: CarouselSlider(
-              options: CarouselOptions(
-                aspectRatio: 2,
-                viewportFraction: 1.0,
-                initialPage: 0,
-                autoPlayInterval: Duration(seconds: 2),
-                autoPlayAnimationDuration: Duration(milliseconds: 800),
-                pauseAutoPlayOnTouch: true,
-                enlargeCenterPage: true,
-                autoPlay: true,
-                onPageChanged: (index, reason) {
-                  _currentIndex = index;
-                  (context as Element).markNeedsBuild();
-                },
               ),
-              items: CarouselSliderList(_getImageSliderList()),
+              height: 40,
+              width: MediaQuery.of(context).size.width,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  Icon(Icons.highlight),
+                  Text('Get Rs.1000 Cashback on Auto/Taxi rides !'),
+                  Icon(
+                    Icons.arrow_right,
+                    color: Colors.black,
+                  ),
+                ],
+              ),
             ),
           ),
-        ),
-      ],
+          Padding(
+            padding: const EdgeInsets.only(top: 1, bottom: 5),
+            child: Container(
+              color: Colors.white,
+              child: CarouselSlider(
+                options: CarouselOptions(
+                  aspectRatio: 2,
+                  viewportFraction: 1.0,
+                  initialPage: 0,
+                  autoPlayInterval: Duration(seconds: 2),
+                  autoPlayAnimationDuration: Duration(milliseconds: 800),
+                  pauseAutoPlayOnTouch: true,
+                  enlargeCenterPage: true,
+                  autoPlay: true,
+                  onPageChanged: (index, reason) {
+                    _currentIndex = index;
+                    (context as Element).markNeedsBuild();
+                  },
+                ),
+                items: CarouselSliderList(_getImageSliderList()),
+              ),
+            ),
+          ),
+          Container(
+            color: Colors.white,
+            padding: const EdgeInsets.symmetric(vertical: 8.0),
+            alignment: Alignment(-1.0, 0.0),
+            child: TextButton(
+              onPressed: () {},
+              child: Row(
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('Cashback & Offers',
+                          textScaleFactor: 1.5,
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold)),
+                      Text('Use our services & win cashback.',
+                          style: TextStyle(color: Colors.black87)),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Container(
+            color: Colors.white,
+            padding: const EdgeInsets.only(top: 4.0, bottom: 12.0),
+            alignment: Alignment(-1.0, 0.0),
+            child: TextButton(
+              onPressed: () {},
+              child: Row(
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('24x7 Support',
+                          textScaleFactor: 1.5,
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold)),
+                      Text('Got doubts or complaints? Reach out to us.',
+                          style: TextStyle(color: Colors.black87)),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 
