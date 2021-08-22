@@ -19,7 +19,7 @@ class BankDetails extends StatelessWidget {
       Colors.blueGrey[50]
     ];
     List<double> cardGradientsPoints = [0, 0.25, 0.5, 0.75, 1.0];
-    const padding = EdgeInsets.only(bottom: 20.0, left: 12.0, right: 12.0);
+    const padding = EdgeInsets.only(bottom: 20.0);
 
     return Scaffold(
         backgroundColor: Colors.white,
@@ -54,8 +54,7 @@ class BankDetails extends StatelessWidget {
               child: ListView(
                 children: [
                   Container(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 20.0, horizontal: 12.0),
+                    padding: const EdgeInsets.symmetric(vertical: 20.0),
                     color: Colors.white,
                     alignment: Alignment(-1.0, 0.0),
                     child: TextButton(
@@ -103,6 +102,10 @@ class BankDetails extends StatelessWidget {
                                 textScaleFactor: 1.1,
                                 style: TextStyle(
                                     color: Colors.black87, letterSpacing: 1)),
+                            Text('Interest earned: ₹78',
+                                textScaleFactor: 1.1,
+                                style: TextStyle(
+                                    color: Colors.green, letterSpacing: 1)),
                             Text('Earn 5.6% interest per annum',
                                 style: TextStyle(
                                     color: Colors.blueGrey, letterSpacing: 1)),
