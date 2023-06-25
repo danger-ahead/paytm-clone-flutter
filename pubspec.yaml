@@ -4,30 +4,21 @@ description: A new Flutter application.
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.2.0 <3.0.0"
+  sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.3
   carousel_slider: ^4.0.0
-  flutter_swiper : ^1.1.6
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
 flutter:
-
   uses-material-design: true
 
   assets:
-  - assets/paytm_logo.png
-  - assets/book.png
-  - assets/real.jpg
-  - assets/gstbanner.png
-  - assets/logo.png
-  - assets/powered_by.png
-  - assets/payments_bank_logo.png
-  - assets/credit-card-chip.png
-  - assets/Rupay-Logo.png
+    - assets/
+    - assets/paytm/

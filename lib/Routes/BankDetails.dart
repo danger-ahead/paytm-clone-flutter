@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_paytm_ui/constant/Constant.dart';
 import 'package:flutter_paytm_ui/model/CreditCard.dart';
 
 class BankDetails extends StatelessWidget {
@@ -12,11 +13,11 @@ class BankDetails extends StatelessWidget {
     String cardProvider = "assets/paytm/Rupay-Logo.png";
     String cardNumber = "1974    4785    4589";
     List<Color> cardGradients = [
-      Colors.blueGrey[50],
+      Colors.blueGrey[50]!,
       Colors.white,
-      Colors.blueGrey[50],
+      Colors.blueGrey[50]!,
       Colors.white,
-      Colors.blueGrey[50]
+      Colors.blueGrey[50]!
     ];
     List<double> cardGradientsPoints = [0, 0.25, 0.5, 0.75, 1.0];
     const padding = EdgeInsets.only(bottom: 20.0);
@@ -58,7 +59,22 @@ class BankDetails extends StatelessWidget {
                     color: Colors.white,
                     alignment: Alignment(-1.0, 0.0),
                     child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                          content: Row(
+                            children: [
+                              CircularProgressIndicator(),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 8.0),
+                                child: Text(
+                                    'server down[err_400]\ncheck back again after some time\ninconvenience caused is regretted'),
+                              ),
+                            ],
+                          ),
+                          duration: Duration(seconds: 5),
+                        ));
+                        Navigator.of(context).pushNamed(HISTORY);
+                      },
                       child: ListTile(
                         title: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -69,11 +85,11 @@ class BankDetails extends StatelessWidget {
                                     color: Colors.black,
                                     fontWeight: FontWeight.bold,
                                     letterSpacing: 2)),
-                            Text('₹5,046.36',
+                            Text('₹13,261.36',
                                 textScaleFactor: 1.1,
                                 style: TextStyle(
                                     color: Colors.black87, letterSpacing: 1)),
-                            Text('Earn 2.75% interest per annum',
+                            Text('Earn 2.5% interest per annum',
                                 style: TextStyle(
                                     color: Colors.blueGrey, letterSpacing: 1)),
                           ],
@@ -98,15 +114,15 @@ class BankDetails extends StatelessWidget {
                                     color: Colors.black,
                                     fontWeight: FontWeight.bold,
                                     letterSpacing: 2)),
-                            Text('₹5,000.00',
+                            Text('₹0',
                                 textScaleFactor: 1.1,
                                 style: TextStyle(
                                     color: Colors.black87, letterSpacing: 1)),
-                            Text('Interest earned: ₹78',
+                            Text('Interest earned: ₹0',
                                 textScaleFactor: 1.1,
                                 style: TextStyle(
                                     color: Colors.green, letterSpacing: 1)),
-                            Text('Earn 5.6% interest per annum',
+                            Text('Earn 5.5% interest per annum',
                                 style: TextStyle(
                                     color: Colors.blueGrey, letterSpacing: 1)),
                           ],
@@ -131,7 +147,7 @@ class BankDetails extends StatelessWidget {
                                     color: Colors.black,
                                     fontWeight: FontWeight.bold,
                                     letterSpacing: 2)),
-                            Text('₹0',
+                            Text('₹503.85',
                                 textScaleFactor: 1.1,
                                 style: TextStyle(
                                     color: Colors.black87, letterSpacing: 1)),
@@ -149,7 +165,12 @@ class BankDetails extends StatelessWidget {
                     color: Colors.white,
                     alignment: Alignment(-1.0, 0.0),
                     child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                          content: Text('Coming Soon!'),
+                          duration: Duration(seconds: 1),
+                        ));
+                      },
                       child: ListTile(
                         title: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -160,10 +181,14 @@ class BankDetails extends StatelessWidget {
                                     color: Colors.black,
                                     fontWeight: FontWeight.bold,
                                     letterSpacing: 2)),
-                            Text('₹27,516.00',
+                            Text('₹76,454.00',
                                 textScaleFactor: 1.1,
                                 style: TextStyle(
                                     color: Colors.black87, letterSpacing: 1)),
+                            Text('Gains: ₹5,168',
+                                textScaleFactor: 1.1,
+                                style: TextStyle(
+                                    color: Colors.green, letterSpacing: 1)),
                             Text('Managing stocks haven\'t been this easy',
                                 style: TextStyle(
                                     color: Colors.blueGrey, letterSpacing: 1)),

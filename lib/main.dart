@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_paytm_ui/Routes/History.dart';
 import 'package:flutter_paytm_ui/constant/Constant.dart';
 import 'package:flutter_paytm_ui/ui/paytm.dart';
 import 'package:flutter_paytm_ui/ui/splashscreen.dart';
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
       routes: <String, WidgetBuilder>{
         SPLASH_SCREEN: (BuildContext context) => SplashScreen(),
         PAY_TM: (BuildContext context) => Paytm(),
+        HISTORY: (BuildContext context) => History(),
       },
     );
   }

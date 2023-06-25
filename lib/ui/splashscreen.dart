@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_paytm_ui/constant/Constant.dart';
 
@@ -12,8 +11,8 @@ class SplashScreenState extends State<SplashScreen>
     with SingleTickerProviderStateMixin {
   var _visible = true;
 
-  AnimationController animationController;
-  Animation<double> animation;
+  late AnimationController animationController;
+  late Animation<double> animation;
 
   startTime() async {
     var _duration = new Duration(seconds: 3);
@@ -56,7 +55,7 @@ class SplashScreenState extends State<SplashScreen>
               Padding(
                 padding: EdgeInsets.only(bottom: 30.0),
                 child: new Image.asset(
-                  "assets/powered_by.png",
+                  "assets/paytm/powered_by.png",
                   height: 25.0,
                   fit: BoxFit.scaleDown,
                 ),
@@ -67,7 +66,7 @@ class SplashScreenState extends State<SplashScreen>
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               new Image.asset(
-                "assets/logo.png",
+                "assets/paytm/logo.png",
                 width: animation.value * 250,
                 height: animation.value * 250,
               ),

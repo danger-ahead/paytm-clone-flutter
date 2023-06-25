@@ -22,7 +22,7 @@ class Home extends StatelessWidget {
                 gradient: LinearGradient(
                   begin: Alignment.bottomCenter,
                   end: Alignment.topCenter,
-                  colors: [Colors.blue[200], Colors.white],
+                  colors: [Colors.blue[200]!, Colors.white],
                 ),
               ),
               child: Column(
@@ -305,10 +305,10 @@ class Home extends StatelessWidget {
   List<ImageSliderModel> _getImageSliderList() {
     List<ImageSliderModel> list = [];
 
-    list.add(new ImageSliderModel("assets/real.jpg"));
-    list.add(new ImageSliderModel("assets/real.jpg"));
-    list.add(new ImageSliderModel("assets/real.jpg"));
-    list.add(new ImageSliderModel("assets/real.jpg"));
+    list.add(new ImageSliderModel("assets/paytm/banner3.png"));
+    list.add(new ImageSliderModel("assets/paytm/real.jpg"));
+    list.add(new ImageSliderModel("assets/paytm/real.jpg"));
+    list.add(new ImageSliderModel("assets/paytm/real.jpg"));
 
     return list;
   }

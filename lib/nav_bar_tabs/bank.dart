@@ -13,10 +13,10 @@ class Bank extends StatelessWidget {
     FocusNode focusNode3 = FocusNode();
 
     List<Color> customBoxDecorationColor = [
-      Colors.blue[100],
-      Colors.blue[100],
-      Colors.blue[100],
-      Colors.blue[100]
+      Colors.blue[100]!,
+      Colors.blue[100]!,
+      Colors.blue[100]!,
+      Colors.blue[100]!
     ];
 
     //https://stackoverflow.com/a/68576118/10951873

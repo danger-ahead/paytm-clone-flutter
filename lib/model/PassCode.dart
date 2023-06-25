@@ -69,13 +69,13 @@ Widget customContainer0(
         obscureText: true,
         obscuringCharacter: '*',
         onTap: () async {
-          customBoxDecorationColor[0] = Colors.blue[50];
+          customBoxDecorationColor[0] = Colors.blue[50]!;
           (context as Element).markNeedsBuild();
         },
         onChanged: (String value) async {
           focusNode1.requestFocus(); //requests focus of 2nd textfield
-          customBoxDecorationColor[0] = Colors.blue[100];
-          customBoxDecorationColor[1] = Colors.blue[50];
+          customBoxDecorationColor[0] = Colors.blue[100]!;
+          customBoxDecorationColor[1] = Colors.blue[50]!;
           (context as Element).markNeedsBuild();
         },
         keyboardType: TextInputType.number,
@@ -105,8 +105,8 @@ Widget customContainer1(
         focusNode: focusNode1, //Own FocusNode set by 1st TextField
         onChanged: (String value) async {
           focusNode2.requestFocus(); //requests focus of 3nd textfield
-          customBoxDecorationColor[1] = Colors.blue[100];
-          customBoxDecorationColor[2] = Colors.blue[50];
+          customBoxDecorationColor[1] = Colors.blue[100]!;
+          customBoxDecorationColor[2] = Colors.blue[50]!;
           (context as Element).markNeedsBuild();
         },
         keyboardType: TextInputType.number,
@@ -135,8 +135,8 @@ Widget customContainer2(
         obscuringCharacter: '*',
         focusNode: focusNode2,
         onChanged: (String value) async {
-          customBoxDecorationColor[2] = Colors.blue[100];
-          customBoxDecorationColor[3] = Colors.blue[50];
+          customBoxDecorationColor[2] = Colors.blue[100]!;
+          customBoxDecorationColor[3] = Colors.blue[50]!;
           focusNode3.requestFocus();
           (context as Element).markNeedsBuild();
         },
@@ -155,10 +155,10 @@ Widget customContainer3(
     TextEditingController _controller1,
     TextEditingController _controller2,
     TextEditingController _controller3,
-    List<Color> customBoxDecorationColor,
+    List<Color?> customBoxDecorationColor,
     BuildContext context) {
   return Container(
-    decoration: customBoxDecoration3(customBoxDecorationColor[3]),
+    decoration: customBoxDecoration3(customBoxDecorationColor[3]!),
     height: 60,
     width: 40,
     child: Center(
