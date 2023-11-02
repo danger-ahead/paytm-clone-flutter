@@ -1,7 +1,7 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
-export "FLUTTER_ROOT=/media/danger-ahead/flutter"
-export "FLUTTER_APPLICATION_PATH=/media/danger-ahead/Documents/codes/paytm-clone-flutter"
+export "FLUTTER_ROOT=/home/dangerahead/flutter"
+export "FLUTTER_APPLICATION_PATH=/home/dangerahead/Documents/paytm-clone-flutter"
 export "COCOAPODS_PARALLEL_CODE_SIGN=true"
 export "FLUTTER_TARGET=lib/main.dart"
 export "FLUTTER_BUILD_DIR=build"

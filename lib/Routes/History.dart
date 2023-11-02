@@ -33,13 +33,13 @@ class _HistoryState extends State<History> {
                   Text('Balance',
                       textScaleFactor: 2,
                       style: TextStyle(
-                          color: Colors.white,
+                          color: Colors.black,
                           fontWeight: FontWeight.bold,
                           letterSpacing: 2)),
-                  Text('\n₹13,261.36',
-                      textScaleFactor: 1.5,
+                  Text('\n₹22,261.36',
                       style: TextStyle(
-                          color: Colors.blue,
+                          color: Colors.green,
+                          fontSize: 24.0,
                           fontWeight: FontWeight.bold,
                           letterSpacing: 1)),
                   Text('Earn 2.75% interest per annum',
@@ -48,17 +48,433 @@ class _HistoryState extends State<History> {
                 ],
               ),
             ),
-            Container(
-              width: double.infinity,
-              margin: const EdgeInsets.fromLTRB(10, 20.0, 10, 10.0),
-              height: 1.0,
-              color: Colors.grey,
-            ),
             Expanded(
                 child: Padding(
               padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
               child: ListView(
                 children: [
+                  Container(
+                    width: double.infinity,
+                    margin: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
+                    height: 1.0,
+                    color: Colors.grey,
+                  ),
+                  Text('October',
+                      style: TextStyle(color: Colors.green, letterSpacing: 1)),
+                  Container(
+                    width: double.infinity,
+                    margin: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
+                    height: 1.0,
+                    color: Colors.grey,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '18-10-23 16.28 TANDOOR CHICKN 669GYFGY',
+                        style: TextStyle(fontSize: 12.0),
+                      ),
+                      Text('₹532.89',
+                          style:
+                              TextStyle(color: Colors.black, fontSize: 12.0)),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '18-10-23 14.25 WTH ATM AXIS/RNIKUTHI',
+                        style: TextStyle(fontSize: 12.0),
+                      ),
+                      Text('₹500',
+                          style:
+                              TextStyle(color: Colors.black, fontSize: 12.0)),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '17-10-23 18.59 RITA DAS',
+                        style: TextStyle(fontSize: 12.0),
+                      ),
+                      Text('₹700',
+                          style:
+                              TextStyle(color: Colors.green, fontSize: 12.0)),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '12-10-23 14.28 N.S.C. BOSE RD/KOTAK',
+                        style: TextStyle(fontSize: 12.0),
+                      ),
+                      Text('₹500',
+                          style:
+                              TextStyle(color: Colors.black, fontSize: 12.0)),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '12-10-23 16.24 PAYTM_MON BSE IND',
+                        style: TextStyle(fontSize: 12.0),
+                      ),
+                      Text('₹5500',
+                          style:
+                              TextStyle(color: Colors.black, fontSize: 12.0)),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '12-10-23 14.28 +DIVYANSH RAJ/856875XEFH',
+                        style: TextStyle(fontSize: 12.0),
+                      ),
+                      Text('₹5500',
+                          style:
+                              TextStyle(color: Colors.green, fontSize: 12.0)),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '07-10-23 18.28 ATM N.S.C. BOSE RD/KOTAK',
+                        style: TextStyle(fontSize: 12.0),
+                      ),
+                      Text('₹500',
+                          style:
+                              TextStyle(color: Colors.black, fontSize: 12.0)),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '01-10-23 14.28 TRNSFR RITA DAS 459VBYG55',
+                        style: TextStyle(fontSize: 12.0),
+                      ),
+                      Text('₹1482',
+                          style:
+                              TextStyle(color: Colors.green, fontSize: 12.0)),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '01-10-23 14.28 FLPKRT-HEALTH IND',
+                        style: TextStyle(fontSize: 12.0),
+                      ),
+                      Text('₹1482',
+                          style:
+                              TextStyle(color: Colors.black, fontSize: 12.0)),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '01-10-23 19.56 ATM AXIS-RNIKTHI ATM-CB738',
+                        style: TextStyle(fontSize: 12.0),
+                      ),
+                      Text('₹500',
+                          style:
+                              TextStyle(color: Colors.black, fontSize: 12.0)),
+                    ],
+                  ),
+                  Container(
+                    width: double.infinity,
+                    margin: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
+                    height: 1.0,
+                    color: Colors.grey,
+                  ),
+                  Text('September',
+                      style: TextStyle(color: Colors.green, letterSpacing: 1)),
+                  Container(
+                    width: double.infinity,
+                    margin: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
+                    height: 1.0,
+                    color: Colors.grey,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '30-09-23 19.42 TRNSFR RITA DAS/SBI-HUQHW8736',
+                        style: TextStyle(fontSize: 12.0),
+                      ),
+                      Text('₹5000',
+                          style:
+                              TextStyle(color: Colors.green, fontSize: 12.0)),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '27-09-23 15.56 ATM KOTK-BELEGHATA ATM-XB721',
+                        style: TextStyle(fontSize: 12.0),
+                      ),
+                      Text('₹500',
+                          style:
+                              TextStyle(color: Colors.black, fontSize: 12.0)),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '25-09-23 20.04 SPENCERS ADGRH',
+                        style: TextStyle(fontSize: 12.0),
+                      ),
+                      Text('₹402.36',
+                          style:
+                              TextStyle(color: Colors.black, fontSize: 12.0)),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '18-09-23 15.27 ATM KOTK-BELEGHATA J-FHJF9878U',
+                        style: TextStyle(fontSize: 12.0),
+                      ),
+                      Text('₹600',
+                          style:
+                              TextStyle(color: Colors.black, fontSize: 12.0)),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '12-09-23 15.27 ATM KOTK-BELEGHATA J-HUH76OMXY',
+                        style: TextStyle(fontSize: 12.0),
+                      ),
+                      Text('500',
+                          style:
+                              TextStyle(color: Colors.black, fontSize: 12.0)),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '11-09-23 16.24 PAYTM_MON BSE IND',
+                        style: TextStyle(fontSize: 12.0),
+                      ),
+                      Text('₹500',
+                          style:
+                              TextStyle(color: Colors.black, fontSize: 12.0)),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '11-09-23 13.39 TRNSFR SEKHAR GHOSH',
+                        style: TextStyle(fontSize: 12.0),
+                      ),
+                      Text('₹5000',
+                          style:
+                              TextStyle(color: Colors.black, fontSize: 12.0)),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '11-09-23 13.26 TRNSFR +DIVYANSH RAJ',
+                        style: TextStyle(fontSize: 12.0),
+                      ),
+                      Text('₹5500',
+                          style:
+                              TextStyle(color: Colors.green, fontSize: 12.0)),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '07-09-23 18.26 TRNSFR RITA DAS/SBI-DCFEF56HYU',
+                        style: TextStyle(fontSize: 12.0),
+                      ),
+                      Text('₹10000',
+                          style:
+                              TextStyle(color: Colors.green, fontSize: 12.0)),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '01-09-23 15.27 ATM KOTK-BELEGHATA J-HGY980WZP',
+                        style: TextStyle(fontSize: 12.0),
+                      ),
+                      Text('₹500',
+                          style:
+                              TextStyle(color: Colors.black, fontSize: 12.0)),
+                    ],
+                  ),
+                  Container(
+                    width: double.infinity,
+                    margin: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
+                    height: 1.0,
+                    color: Colors.grey,
+                  ),
+                  Text('August',
+                      style: TextStyle(color: Colors.green, letterSpacing: 1)),
+                  Container(
+                    width: double.infinity,
+                    margin: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
+                    height: 1.0,
+                    color: Colors.grey,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '31-08-23 18.39 TRNSFR RITA DAS/SBI-659CVYS58',
+                        style: TextStyle(fontSize: 12.0),
+                      ),
+                      Text('₹5000',
+                          style:
+                              TextStyle(color: Colors.green, fontSize: 12.0)),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '11-08-23 00.24 RCC INS...BELEGHTA-IND',
+                        style: TextStyle(fontSize: 12.0),
+                      ),
+                      Text('₹45500',
+                          style:
+                              TextStyle(color: Colors.black, fontSize: 12.0)),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '10-08-23 18.39 TRNSFR SEKHAR GHOSH',
+                        style: TextStyle(fontSize: 12.0),
+                      ),
+                      Text('₹5500',
+                          style:
+                              TextStyle(color: Colors.green, fontSize: 12.0)),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '10-08-23 18.39 TRNSFR SEKHAR GHOSH',
+                        style: TextStyle(fontSize: 12.0),
+                      ),
+                      Text('₹20000',
+                          style:
+                              TextStyle(color: Colors.green, fontSize: 12.0)),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '01-08-23 18.39 TRNSFR RITA DAS/SBI-659CVYS58',
+                        style: TextStyle(fontSize: 12.0),
+                      ),
+                      Text('₹20000',
+                          style:
+                              TextStyle(color: Colors.green, fontSize: 12.0)),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '01-08-23 18.39 TRNSFR RITA DAS/SBI-659CVYS58',
+                        style: TextStyle(fontSize: 12.0),
+                      ),
+                      Text('₹5000',
+                          style:
+                              TextStyle(color: Colors.green, fontSize: 12.0)),
+                    ],
+                  ),
+                  Container(
+                    width: double.infinity,
+                    margin: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
+                    height: 1.0,
+                    color: Colors.grey,
+                  ),
+                  Text('July',
+                      style: TextStyle(color: Colors.green, letterSpacing: 1)),
+                  Container(
+                    width: double.infinity,
+                    margin: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
+                    height: 1.0,
+                    color: Colors.grey,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '29-07-23 15.09 FLPKRT HLTH BGL-IND',
+                        style: TextStyle(fontSize: 12.0),
+                      ),
+                      Text('₹2732.16',
+                          style:
+                              TextStyle(color: Colors.black, fontSize: 12.0)),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '29-07-23 15.03 1MGLABS PUNE-IND',
+                        style: TextStyle(fontSize: 12.0),
+                      ),
+                      Text('₹4269.25',
+                          style:
+                              TextStyle(color: Colors.black, fontSize: 12.0)),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '29-07-23 14.56 TRNSFR RITA DAS/SBI-55FUS58BGHT',
+                        style: TextStyle(fontSize: 12.0),
+                      ),
+                      Text('₹7000',
+                          style:
+                              TextStyle(color: Colors.green, fontSize: 12.0)),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '01-07-23 19.12 TRNSFR RITA DAS/SBI-24GY58BHTE',
+                        style: TextStyle(fontSize: 12.0),
+                      ),
+                      Text('₹4000',
+                          style:
+                              TextStyle(color: Colors.green, fontSize: 12.0)),
+                    ],
+                  ),
+                  Container(
+                    width: double.infinity,
+                    margin: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
+                    height: 1.0,
+                    color: Colors.grey,
+                  ),
                   Text('June',
                       style: TextStyle(color: Colors.green, letterSpacing: 1)),
                   Container(

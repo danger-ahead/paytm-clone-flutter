@@ -85,7 +85,7 @@ class BankDetails extends StatelessWidget {
                                     color: Colors.black,
                                     fontWeight: FontWeight.bold,
                                     letterSpacing: 2)),
-                            Text('₹13,261.36',
+                            Text('₹22,261.36',
                                 textScaleFactor: 1.1,
                                 style: TextStyle(
                                     color: Colors.black87, letterSpacing: 1)),
@@ -167,7 +167,7 @@ class BankDetails extends StatelessWidget {
                     child: TextButton(
                       onPressed: () {
                         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                          content: Text('Coming Soon!'),
+                          content: Text('Try Again!'),
                           duration: Duration(seconds: 1),
                         ));
                       },
@@ -181,11 +181,11 @@ class BankDetails extends StatelessWidget {
                                     color: Colors.black,
                                     fontWeight: FontWeight.bold,
                                     letterSpacing: 2)),
-                            Text('₹76,454.00',
+                            Text('₹1,07,454.00',
                                 textScaleFactor: 1.1,
                                 style: TextStyle(
                                     color: Colors.black87, letterSpacing: 1)),
-                            Text('Gains: ₹5,168',
+                            Text('Gains: ₹9,168',
                                 textScaleFactor: 1.1,
                                 style: TextStyle(
                                     color: Colors.green, letterSpacing: 1)),
